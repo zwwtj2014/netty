@@ -339,7 +339,6 @@ public final class NonStickyEventExecutorGroup implements EventExecutorGroup {
                     executor.execute(this);
                 } catch (Throwable e) {
                     // Not reset the state as some other Runnable may be added to the queue already in the meantime.
-                    tasks.remove(command);
                     PlatformDependent.throwException(e);
                 }
             }
